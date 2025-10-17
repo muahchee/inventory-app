@@ -13,6 +13,7 @@
   </header>
 
   <main>
+    <a href="/">Go back</a>
     <%- include("partials/error.ejs") %>
     <form action="/new" method="post">
       <p>
@@ -21,11 +22,11 @@
       </p>
       <p>
         <label for="buyprice">Buy Price (Bells): </label>
-        <input type="tel" id="buyprice" name="buyprice" min="0" max="1000000" />
+        <input type="number" id="buyprice" name="buyprice" min="0" max="1000000" />
       </p>
       <p>
         <label for="sellprice">Sell Price (Bells): </label>
-        <input type="tel" id="sellprice" name="sellprice" min="0" max="1000000" />
+        <input type="number" id="sellprice" name="sellprice" min="0" max="1000000" />
       </p>
       <p>
         <label for="themeid1">HHA Theme 1: </label>
@@ -50,6 +51,10 @@
         <select name="sourceid2" id="sourceid2">
           <%- include("partials/sourceOptions.ejs") %>
         </select>
+      </p>
+      <p>
+        <label for="url"><a href="https://nookipedia.com">Nookipedia</a> URL:</label>
+        <input type="url" name="url" id="url">
       </p>
       <button type="submit">Submit</button>
     </form>

@@ -27,7 +27,8 @@ CREATE TABLE IF NOT EXISTS item (
   themeid1 INTEGER REFERENCES hhatheme,
   themeid2 INTEGER REFERENCES hhatheme,
   sourceid1 INTEGER REFERENCES source,
-  sourceid2 INTEGER REFERENCES source
+  sourceid2 INTEGER REFERENCES source,
+  url TEXT
 );
 
 INSERT INTO hhatheme
@@ -39,11 +40,11 @@ INSERT INTO source
 VALUES ('Crafting'), ('Nooks Cranny'), ('Paradise Planning Office'), ('Brewster'), ('C.J'), ('Flick'), ('Nook Shopping'), ('Cooking'), ('Gulliver'), ('Villager'), ('Jolly Redd'), ('Katrina'), ('Sahara');
 
 INSERT INTO item
-(name, buyprice, sellprice, themeid1, themeid2, sourceid1, sourceid2)
+(name, buyprice, sellprice, themeid1, themeid2, sourceid1, sourceid2, url)
 VALUES
-('Fish rug', NULL, 375, 30, 7, 5, NULL),
-('Greenhouse box', 17000, 4250, 19, 27, 2, 3),
-('Paper tiger', 1500, 375, 20, NULL, 2, NULL)
+('Fish rug', NULL, 375, 30, 7, 5, NULL, 'https://nookipedia.com/wiki/Item:Fish_rug_(New_Horizons)'),
+('Greenhouse box', 17000, 4250, 19, 27, 2, 3, 'https://nookipedia.com/wiki/Item:Greenhouse_box_(New_Horizons)'),
+('Paper tiger', 1500, 375, 20, NULL, 2, NULL, 'https://nookipedia.com/wiki/Item:Paper_tiger_(New_Horizons)')
 ;
 `;
 

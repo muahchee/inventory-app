@@ -8,7 +8,7 @@ export async function allItemsGet(req, res) {
   res.render("index", { title: "My Favourite Items", items: items });
 }
 
-export async function deleteItemPost(req, res) {
+export async function deleteItemGet(req, res) {
   const id = req.params.id;
   await deleteItem(id);
   res.redirect("/")

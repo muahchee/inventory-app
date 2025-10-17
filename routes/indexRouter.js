@@ -1,7 +1,10 @@
 import { Router } from "express";
-import { allItemsGet, deleteItemPost } from "../controllers/indexController.js";
+import { allItemsGet, deleteItemGet } from "../controllers/indexController.js";
+import { updateItemGet, updateItemPost } from "../controllers/updateController.js";
 
 export const indexRouter = Router();
 
 indexRouter.get("/", allItemsGet);
-indexRouter.get("/:id/delete", deleteItemPost);
+indexRouter.get("/:id/delete", deleteItemGet);
+indexRouter.get("/:id/update", updateItemGet);
+indexRouter.post("/:id/update", updateItemPost);

@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 import { indexRouter } from "./routes/indexRouter.js";
 import { newRouter } from "./routes/newRouter.js";
-import { updateRouter } from "./routes/updateRouter.js";
+// import { updateRouter } from "./routes/updateRouter.js";
 
 const app = e();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -18,7 +18,6 @@ app.use(urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
 app.use("/new", newRouter);
-app.use("/:id/update", updateRouter);
 
 app.listen(PORT, (err) => {
   if (err) throw err;

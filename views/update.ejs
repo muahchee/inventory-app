@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+
+<body>
+  <header>
+    <h1><%= title %></h1>
+  </header>
+
+  <main>
+    <a href="/">Go back</a>
+    <%- include("partials/error.ejs") %>
+    <form action="/<%= targetItem.id %>/update" method="post">
+      <p>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" value="<%= targetItem.name %>" required />
+      </p>
+      <p>
+        <label for="buyprice">Buy Price (Bells): </label>
+        <input type="number" id="buyprice" name="buyprice" value="<%= targetItem.buyprice %>" min="0" max="1000000" />
+      </p>
+      <p>
+        <label for="sellprice">Sell Price (Bells): </label>
+        <input type="number" id="sellprice" name="sellprice" value="<%= targetItem.sellprice %>" min="0" max="1000000" />
+      </p>
+      <p>
+        <label for="themeid1">HHA Theme 1: </label>
+        <select name="themeid1" id="themeid1">
+          <option value="<%= themes[0].id %>" selected><%= themes[0].themename %></option>
+          <%- include("partials/themeOptions.ejs") %>
+        </select>
+      </p>
+      <p>
+        <label for="themeid2">HHA Theme 2: </label>
+        <select name="themeid2" id="themeid2">
+          <option value="<%= themes[1].id %>" selected><%= themes[1].themename %></option>
+          <%- include("partials/themeOptions.ejs") %>
+        </select>
+      </p>
+      <p>
+        <label for="sourceid1">Source 1: </label>
+        <select name="sourceid1" id="sourceid1">
+          <option value="<%= sources[0].id %>" selected><%= sources[0].sourcename %></option>
+          <%- include("partials/sourceOptions.ejs") %>
+        </select>
+      </p>
+      <p>
+        <label for="sourceid2">Source 2: </label>
+        <select name="sourceid2" id="sourceid2">
+          <option value="<%= sources[1].id %>" selected><%= sources[1].sourcename %></option>
+          <%- include("partials/sourceOptions.ejs") %>
+        </select>
+      </p>
+      <p>
+        <label for="url"><a href="https://nookipedia.com">Nookipedia</a> URL: </label>
+        <input type="url" name="url" id="url" value="<%= targetItem.url %>" />
+      </p>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+</body>
+
+</html>

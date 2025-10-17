@@ -14,6 +14,7 @@ export async function addItemPost(req, res) {
     themeid2,
     sourceid1,
     sourceid2,
+    url
   } = req.body;
 
   await addItem({
@@ -24,6 +25,7 @@ export async function addItemPost(req, res) {
     themeid2: themeid2 === "" ? null : Number(themeid2),
     sourceid1: sourceid1 === "" ? null : Number(sourceid1),
     sourceid2: sourceid2 === "" ? null : Number(sourceid2),
+    url: url
   });
 
   res.redirect("/");
