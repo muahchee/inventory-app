@@ -1,0 +1,32 @@
+{
+  "name": "inventory-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js dev",
+    "prod": "node --watch app.js prod",
+    "dev-db": "node db/populatedb.js dev",
+    "prod-db": "node db/populatedb.js prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muahchee/inventory-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/muahchee/inventory-app/issues"
+  },
+  "homepage": "https://github.com/muahchee/inventory-app#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "pg": "^8.16.3",
+    "pg-format": "^1.0.4"
+  }
+}
