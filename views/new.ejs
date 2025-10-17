@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+
+<body>
+  <header>
+    <h1><%= title %></h1>
+  </header>
+
+  <main>
+    <%- include("partials/error.ejs") %>
+    <form action="/new" method="post">
+      <p>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" required />
+      </p>
+      <p>
+        <label for="buyprice">Buy Price (Bells): </label>
+        <input type="tel" id="buyprice" name="buyprice" min="0" max="1000000" />
+      </p>
+      <p>
+        <label for="sellprice">Sell Price (Bells): </label>
+        <input type="tel" id="sellprice" name="sellprice" min="0" max="1000000" />
+      </p>
+      <p>
+        <label for="theme1">HHA Theme 1: </label>
+        <select name="theme1" id="theme1">
+          <%- include("partials/themeOptions.ejs") %>
+        </select>
+      </p>
+      <p>
+        <label for="theme2">HHA Theme 2: </label>
+        <select name="theme2" id="theme2">
+          <%- include("partials/themeOptions.ejs") %>
+        </select>
+      </p>
+      <p>
+        <label for="source1">Source 1:</label>
+        <select name="source1" id="source1">
+          <%- include("partials/sourceOptions.ejs") %>
+        </select>
+      </p>
+      <p>
+        <label for="source2">Source 2:</label>
+        <select name="source2" id="source2">
+          <%- include("partials/sourceOptions.ejs") %>
+        </select>
+      </p>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+</body>
+
+</html>

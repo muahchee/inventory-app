@@ -3,5 +3,5 @@ import { updateItemGet, updateItemPost } from "../controllers/updateController.j
 
 export const updateRouter = Router();
 
-updateRouter.get("/:id", updateItemGet)
-updateRouter.post("/:id", updateItemPost)
+updateRouter.get("/", updateItemGet)
+updateRouter.post("/", updateItemPost)

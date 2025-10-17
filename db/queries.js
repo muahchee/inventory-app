@@ -36,7 +36,7 @@ export async function updateItem(obj, targetid) {
     obj.themeid2,
     obj.sourceid1,
     obj.sourceid2,
-    targetid
+    targetid,
   ]);
 }
 
@@ -53,5 +53,6 @@ export async function getItemByName(name) {
 }
 
 export async function deleteItem(id) {
-  format("DELETE FROM item  WHERE id=%s;", id);
+  const sql = format("DELETE FROM item WHERE id=%s;", id);
+  await pool.query(sql);
 }

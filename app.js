@@ -18,7 +18,7 @@ app.use(urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
 app.use("/new", newRouter);
-app.use("/update", updateRouter);
+app.use("/:id/update", updateRouter);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
