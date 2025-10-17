@@ -2,7 +2,9 @@ import e, { urlencoded } from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { indexRouter } from "./routes/indexRouter";
+import { indexRouter } from "./routes/indexRouter.js";
+import { newRouter } from "./routes/newRouter.js";
+import { updateRouter } from "./routes/updateRouter.js";
 
 const app = e();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -15,11 +17,12 @@ app.use(e.static(assetsPath));
 app.use(urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
-
+app.use("/new", newRouter);
+app.use("/update", updateRouter);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
-  cosnsole.log(`Listening on port ${PORT}`);
+  console.log(`Listening on port ${PORT}`);
 });
 
 app.use((err, req, res, next) => {
