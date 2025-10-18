@@ -1,12 +1,55 @@
-table {
-  table-layout: fixed;
-  width: 90%;
-  margin: 10px auto;
-  border-collapse: collapse;
+body {
+  --light: #e7d5c1;
+  --lighter: #f3e5d4;
+  --dark: #1e1c32;
+  --warning: rgb(252, 115, 115);
+
+  font-family: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa,
+    Manjari, "Arial Rounded MT", "Arial Rounded MT Bold", Calibri,
+    source-sans-pro, sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  font-size: 1.2rem;
+  width: min(1200px, 95vw);
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-table, th, td {
-  border: 1px solid;
+main {
+  width: 100%;
+  padding: calc(20px);
+}
+
+main > a {
+  display: block;
+  text-align: center;
+}
+
+div:has(table) {
+  overflow-x: auto;
+}
+
+table {
+  table-layout: auto;
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 2px solid var(--dark);
+}
+
+thead tr,
+tr:nth-child(even) {
+  background-color: var(--lighter);
+}
+
+th,
+td {
+  border: 1px dashed var(--dark);
+  padding: 8px;
 }
 
 th,
@@ -20,4 +63,13 @@ td {
 
 img.link-img {
   width: 20px;
+}
+
+button.delete {
+  background-color: var(--warning);
+  cursor: pointer;
+  color: inherit;
+  padding: 10px 15px;
+  font: inherit;
+  font-weight: bold;
 }

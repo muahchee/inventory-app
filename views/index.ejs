@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
   <link rel="stylesheet" href="../styles/styles.css">
-  <script defer></script>
 </head>
 
 <body>
@@ -15,41 +14,43 @@
   </header>
   <main>
     <a href="/new">Add new item.</a>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Buy Price (Bells)</th>
-          <th>Sell Price (Bells)</th>
-          <th>HHA Theme 1</th>
-          <th>HHA Theme 2</th>
-          <th>Source 1</th>
-          <th>Source 2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for (let i = 0; i < items.length; i++) { %>
-        <tr>
-          <td>
-            <a href="<%= items[i].url %>"><%= items[i].name %></a>
-            <% if (items[i].url) { %>
-            <img class="link-img" src="../img/link.svg" alt="">
-            <% } %>
-          </td>
-          <td><%= items[i].buyprice %></td>
-          <td><%= items[i].sellprice %></td>
-          <td><%= items[i].theme1 %></td>
-          <td><%= items[i].theme2 %></td>
-          <td><%= items[i].source1 %></td>
-          <td><%= items[i].source2 %></td>
-          <td><a href="/<%= items[i].id %>/updating/confirm">Update</a></td>
-          <td>
-            <form action="/<%= items[i].id %>/deleting/confirm"><button type="submit">Delete</button></form>
-          </td>
-        </tr>
-        <% } %>
-      </tbody>
-    </table>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Buy Price (Bells)</th>
+            <th>Sell Price (Bells)</th>
+            <th>HHA Theme 1</th>
+            <th>HHA Theme 2</th>
+            <th>Source 1</th>
+            <th>Source 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i < items.length; i++) { %>
+          <tr>
+            <td>
+              <a href="<%= items[i].url %>"><%= items[i].name %></a>
+              <% if (items[i].url) { %>
+              <img class="link-img" src="../img/link.svg" alt="">
+              <% } %>
+            </td>
+            <td><%= items[i].buyprice %></td>
+            <td><%= items[i].sellprice %></td>
+            <td><%= items[i].theme1 %></td>
+            <td><%= items[i].theme2 %></td>
+            <td><%= items[i].source1 %></td>
+            <td><%= items[i].source2 %></td>
+            <td><a href="/<%= items[i].id %>/updating/confirm">Update</a></td>
+            <td>
+              <form action="/<%= items[i].id %>/deleting/confirm"><button class="delete" type="submit">Delete</button></form>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
   </main>
 </body>
 
