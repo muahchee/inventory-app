@@ -27,8 +27,8 @@ const validateItem = [
       }
     })
     .customSanitizer((value) => {
-      if (value === '0') {
-        return '';
+      if (value === "0") {
+        return "";
       } else {
         return value;
       }
@@ -38,13 +38,12 @@ const validateItem = [
     .optional({ values: "falsy" })
     .custom(async (value) => {
       if ((value < 0 || value > 1000000) && value !== null && value !== "") {
-        console.log(typeof value);
         throw new Error("Sell price " + priceError + value);
       }
     })
     .customSanitizer((value) => {
-      if (value === '0') {
-        return '';
+      if (value === "0") {
+        return "";
       } else {
         return value;
       }
@@ -54,7 +53,6 @@ const validateItem = [
     .optional({ values: "falsy" })
     .isURL()
     .custom(async (value) => {
-      console.log("url " + value);
       if (
         value.includes("https://nookipedia.com/wiki/Item:") === false &&
         value !== null
@@ -103,7 +101,6 @@ export async function updateItemGet(req, res) {
   const targetItem = await getItemById(req.params.id);
   const themes = await getThemes(targetItem);
   const sources = await getSources(targetItem);
-  console.log(targetItem.buyprice);
   res.render("update", {
     title: "Update an item",
     targetItem: targetItem,
@@ -131,9 +128,6 @@ export const updateItemPost = [
     const { name, buyprice, sellprice, url } = matchedData(req, {
       includeOptionals: true,
     });
-    console.log(matchedData(req, {
-      includeOptionals: true,
-    }))
 
     const { themeid1, themeid2, sourceid1, sourceid2 } = req.body;
 

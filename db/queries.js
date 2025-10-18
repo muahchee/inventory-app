@@ -62,13 +62,11 @@ export async function deleteItem(id) {
 export async function getThemeById(id) {
   const sql = format("SELECT * FROM hhatheme WHERE id=%s;", id);
   const { rows } = await pool.query(sql);
-  console.log(rows);
   return rows[0].themename;
 }
 
 export async function getSourceById(id) {
   const sql = format("SELECT * FROM source WHERE id=%s;", id);
   const { rows } = await pool.query(sql);
-  console.log(rows);
   return rows[0].sourcename;
 }

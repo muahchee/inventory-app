@@ -38,7 +38,6 @@ const validateItem = [
     .optional({ values: "falsy" })
     .custom(async (value) => {
       if ((value < 0 || value > 1000000) && value !== null && value !== "") {
-        console.log(typeof value);
         throw new Error("Sell price " + priceError + value);
       }
     })
@@ -54,7 +53,6 @@ const validateItem = [
     .optional({ values: "falsy" })
     .isURL()
     .custom(async (value) => {
-      console.log("url " + value);
       if (
         value.includes("https://nookipedia.com/wiki/Item:") === false &&
         value !== null
@@ -102,29 +100,3 @@ export const addItemPost = [
     res.redirect("/");
   },
 ];
-
-// export async function addItemPost(req, res) {
-//   const {
-//     name,
-//     buyprice,
-//     sellprice,
-//     themeid1,
-//     themeid2,
-//     sourceid1,
-//     sourceid2,
-//     url,
-//   } = req.body;
-
-//   await addItem({
-//     name: name,
-//     buyprice: buyprice === "" ? null : Number(buyprice),
-//     sellprice: sellprice === "" ? null : Number(sellprice),
-//     themeid1: themeid1 === "" ? null : Number(themeid1),
-//     themeid2: themeid2 === "" ? null : Number(themeid2),
-//     sourceid1: sourceid1 === "" ? null : Number(sourceid1),
-//     sourceid2: sourceid2 === "" ? null : Number(sourceid2),
-//     url: url,
-//   });
-
-//   res.redirect("/");
-// }

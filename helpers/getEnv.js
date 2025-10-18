@@ -5,8 +5,6 @@ dotenv.config();
 export function getEnv(argv) {
   let connectionString;
 
-  console.log(argv);
-
   const env = argv.includes("dev") ? "dev" : "prod";
 
   if (env === "dev") {
