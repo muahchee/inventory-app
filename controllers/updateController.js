@@ -3,7 +3,6 @@ import {
   getItemById,
   getThemeById,
   getSourceById,
-  getItemByName,
 } from "../db/queries.js";
 import { body, validationResult, matchedData } from "express-validator";
 
