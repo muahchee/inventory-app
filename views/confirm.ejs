@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+
+<body>
+  <a href="/">Go back.</a>
+  <%- include("partials/error.ejs") %>
+  <h1>What is the super secret password?</h1>
+  <form action="/<%= id %>/<%= action %>/confirm" method="post">
+    <label for="pw">Password: </label>
+    <input type="password" required id="pw" name="pw" />
+    <button type="submit">Submit</button>
+  </form>
+</body>
+
+</html>
