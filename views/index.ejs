@@ -29,7 +29,12 @@
       <tbody>
         <% for (let i = 0; i < items.length; i++) { %>
         <tr>
-          <td><a href="<%= items[i].url %>"><%= items[i].name %></a></td>
+          <td>
+            <a href="<%= items[i].url %>"><%= items[i].name %></a>
+            <% if (items[i].url) { %>
+              <img class="link-img" src="../img/link.svg" alt="">
+            <% } %>
+          </td>
           <td><%= items[i].buyprice %></td>
           <td><%= items[i].sellprice %></td>
           <td><%= items[i].theme1 %></td>

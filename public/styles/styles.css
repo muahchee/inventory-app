@@ -13,3 +13,11 @@ th,
 td {
   padding: 0.6em;
 }
+
+td {
+  position: relative;
+}
+
+img.link-img {
+  width: 20px;
+}
